@@ -1,0 +1,69 @@
+﻿<Page x:Class="Sport.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sport"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1">
+    <Grid>
+
+        <TabControl>
+            <TabItem Header="Клиент">
+            <Grid>
+                <StackPanel>
+                    <TextBlock Text="Просмотр товаров" FontSize="18" Margin="10" HorizontalAlignment="Center"/>
+                    <TextBox x:Name="SearchBoxClient" Width="300" Margin="10,0,0,10" 
+                                  HorizontalAlignment="Left"/>
+                    <DataGrid x:Name="ProductGridClient" AutoGenerateColumns="True" Margin="10"/>
+                    <Button Content="Добавить в заказ" Width="200" Height="30" Margin="10" HorizontalAlignment="Left" 
+                                Click="AddToOrder_Click"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+
+        <TabItem Header="Менеджер">
+            <Grid>
+                <StackPanel>
+                    <TextBlock Text="Управление заказами" FontSize="18" Margin="10" HorizontalAlignment="Center"/>
+                    <DataGrid x:Name="OrderGridManager" AutoGenerateColumns="True" Margin="10"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                        <Button Content="Добавить заказ" Width="150" Margin="5" Click="AddOrder_Click"/>
+                        <Button Content="Редактировать заказ" Width="150" Margin="5" Click="EditOrder_Click"/>
+                        <Button Content="Удалить заказ" Width="150" Margin="5" Click="DeleteOrder_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+
+        <TabItem Header="Администратор">
+            <Grid>
+                <StackPanel>
+                    <TextBlock Text="Управление товарами" FontSize="18" Margin="10" HorizontalAlignment="Center"/>
+                    <DataGrid x:Name="ProductGridAdmin" AutoGenerateColumns="True" Margin="10"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                        <Button Content="Добавить товар" Width="150" Margin="5" Click="AddProduct_Click"/>
+                        <Button Content="Редактировать товар" Width="150" Margin="5" Click="EditProduct_Click"/>
+                        <Button Content="Удалить товар" Width="150" Margin="5" Click="DeleteProduct_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+
+        <TabItem Header="Терминал">
+            <Grid>
+                <StackPanel>
+                    <TextBlock Text="Терминал - Просмотр товаров" FontSize="18" Margin="10" HorizontalAlignment="Center"/>
+                    <DataGrid x:Name="ProductGridTerminal" AutoGenerateColumns="True" Margin="10"/>
+                    <Button Content="Сформировать заказ" Width="200" Height="30" Margin="10" HorizontalAlignment="Center"
+                                Click="CreateTerminalOrder_Click"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+    </TabControl>
+    </Grid>
+</Page>
